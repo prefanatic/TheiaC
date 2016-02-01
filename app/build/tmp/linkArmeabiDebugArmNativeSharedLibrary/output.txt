@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArmeabiDebugArmNativeSharedLibrary/output.txt for all output for linkArmeabiDebugArmNativeSharedLibrary.
+linking libnative.so successful.
+
+Finished linkArmeabiDebugArmNativeSharedLibrary, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArmeabiDebugArmNativeSharedLibrary/output.txt.

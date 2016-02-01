@@ -1,0 +1,13 @@
+-shared
+-Wl,-soname,libhello-jni.so
+-o
+C:\\Users\\prefa\\Desktop\\HelloJNI\\app\\build\\intermediates\\binaries\\debug\\all\\obj\\armeabi\\libhello-jni.so
+C:\\Users\\prefa\\Desktop\\HelloJNI\\app\\build\\intermediates\\objectFiles\\armeabiDebugAllHello-jniSharedLibrary\\hello-jniMainC\\5h0hrw5nhnxw0p3tuwuo1cynr\\hello-jni.o
+C:\\Users\\prefa\\Desktop\\HelloJNI\\app\\build\\intermediates\\objectFiles\\armeabiDebugAllHello-jniSharedLibrary\\hello-jniMainCpp\\ey73vn2buxii513hxir16zvc2\\filter.o
+-Wl,--no-undefined
+-Wl,-z,noexecstack
+-Wl,-z,relro
+-Wl,-z,now
+--sysroot=D:\\sdk\\ndk-bundle/platforms/android-21/arch-arm
+-Wl,--build-id
+-no-canonical-prefixes

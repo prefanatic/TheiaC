@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileMipsDebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt for all output for compileMipsDebugAllHello-jniSharedLibraryHello-jniMainCpp.
+compiling filter.cpp successful.
+
+Finished compileMipsDebugAllHello-jniSharedLibraryHello-jniMainCpp, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileMipsDebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt.

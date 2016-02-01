@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="android-0.19">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.boofcv/android/0.19/f8645dd27a4278f0e55ff4c01ff61f02128eca21/android-0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.boofcv/android/0.19/4d7c699f14f1ba2b771ec80cc10809d0b89aaf1a/android-0.19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

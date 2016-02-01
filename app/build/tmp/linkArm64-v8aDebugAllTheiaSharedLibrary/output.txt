@@ -1,0 +1,12 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArm64-v8aDebugAllTheiaSharedLibrary/output.txt for all output for linkArm64-v8aDebugAllTheiaSharedLibrary.
+linking libtheia.so failed.
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: skipping incompatible D:\OpenCV-android-sdk\sdk/native/libs/armeabi-v7a\libopencv_imgproc.a when searching for -lopencv_imgproc
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: cannot find -lopencv_imgproc
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: skipping incompatible D:\OpenCV-android-sdk\sdk/native/libs/armeabi-v7a\libopencv_core.a when searching for -lopencv_core
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: cannot find -lopencv_core
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: cannot find -lopencv_hal
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: skipping incompatible D:\OpenCV-android-sdk\sdk/native/3rdparty/libs/armeabi-v7a\libtbb.a when searching for -ltbb
+D:/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/bin/ld.exe: cannot find -ltbb
+collect2.exe: error: ld returned 1 exit status
+
+Finished linkArm64-v8aDebugAllTheiaSharedLibrary, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArm64-v8aDebugAllTheiaSharedLibrary/output.txt.

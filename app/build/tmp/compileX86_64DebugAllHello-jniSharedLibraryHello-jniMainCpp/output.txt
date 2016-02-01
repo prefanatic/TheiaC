@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileX86_64DebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt for all output for compileX86_64DebugAllHello-jniSharedLibraryHello-jniMainCpp.
+compiling filter.cpp successful.
+
+Finished compileX86_64DebugAllHello-jniSharedLibraryHello-jniMainCpp, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileX86_64DebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt.

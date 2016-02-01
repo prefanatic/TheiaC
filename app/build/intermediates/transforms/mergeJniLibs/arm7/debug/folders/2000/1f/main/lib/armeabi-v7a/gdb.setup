@@ -1,0 +1,2 @@
+set solib-search-path C:\Users\prefa\Desktop\HelloJNI\app\build\intermediates\binaries\debug\arm7\lib\armeabi-v7a
+directory D:\sdk\ndk-bundle/platforms/android-21/arch-arm/usr/include C:\Users\prefa\Desktop\HelloJNI\app\src\debug\jni C:\Users\prefa\Desktop\HelloJNI\app\src\arm7Debug\jni D:\sdk\ndk-bundle\sources\cxx-stl/system/include C:\Users\prefa\Desktop\HelloJNI\app\src\theia\c C:\Users\prefa\Desktop\HelloJNI\app\src\arm7\jni C:\Users\prefa\Desktop\HelloJNI\app\src\theia\cpp C:\Users\prefa\Desktop\HelloJNI\app\src\main\jni

@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugArmNativeSharedLibraryNativeMainC/output.txt for all output for compileArmeabiDebugArmNativeSharedLibraryNativeMainC.
+compiling hello-jni.c successful.
+
+Finished compileArmeabiDebugArmNativeSharedLibraryNativeMainC, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugArmNativeSharedLibraryNativeMainC/output.txt.

@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArmeabi-v7aDebugTheiaSharedLibrary/output.txt for all output for linkArmeabi-v7aDebugTheiaSharedLibrary.
+linking libtheia.so successful.
+
+Finished linkArmeabi-v7aDebugTheiaSharedLibrary, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/linkArmeabi-v7aDebugTheiaSharedLibrary/output.txt.

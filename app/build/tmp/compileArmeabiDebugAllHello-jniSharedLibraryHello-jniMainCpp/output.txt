@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt for all output for compileArmeabiDebugAllHello-jniSharedLibraryHello-jniMainCpp.
+compiling filter.cpp successful.
+
+Finished compileArmeabiDebugAllHello-jniSharedLibraryHello-jniMainCpp, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugAllHello-jniSharedLibraryHello-jniMainCpp/output.txt.

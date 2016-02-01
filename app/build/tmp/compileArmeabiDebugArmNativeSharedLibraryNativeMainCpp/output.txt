@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugArmNativeSharedLibraryNativeMainCpp/output.txt for all output for compileArmeabiDebugArmNativeSharedLibraryNativeMainCpp.
+compiling filter.cpp successful.
+
+Finished compileArmeabiDebugArmNativeSharedLibraryNativeMainCpp, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabiDebugArmNativeSharedLibraryNativeMainCpp/output.txt.

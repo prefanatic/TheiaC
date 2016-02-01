@@ -1,0 +1,90 @@
+apply plugin: 'com.android.model.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+def appAbi = "armeabi-v7a"
+def openCVAndroidSdkDir = "D:\\OpenCV-android-sdk\\sdk\\native"
+
+model {
+    android {
+        compileSdkVersion = 23
+        buildToolsVersion = "23.0.2"
+
+        defaultConfig.with {
+            applicationId = "io.github.prefanatic.theia"
+            minSdkVersion.apiLevel = 21
+            targetSdkVersion.apiLevel = 23
+        }
+    }
+
+    compileOptions.with {
+        sourceCompatibility=JavaVersion.VERSION_1_8
+        targetCompatibility=JavaVersion.VERSION_1_8
+    }
+
+    /*
+     * native build settings
+     */
+    android.ndk {
+        /*moduleName = "theia"
+        platformVersion = 21
+        ldFlags.add("-L$OpenCV_sdk/native/libs/$appAbi".toString())
+        ldFlags.add("-L$OpenCV_sdk/native/3rdparty/libs/$appAbi".toString())
+        ldLibs.addAll(['opencv_imgproc', 'opencv_core', 'tbb'])
+        *//*
+         * Other ndk flags configurable here are
+         * cppFlags.add("-fno-rtti")
+         * cppFlags.add("-fno-exceptions")
+         * ldLibs.addAll(["android", "log"])
+         * stl       = "system"
+         */
+
+        moduleName = "native"
+        cppFlags.add("-I${file(openCVAndroidSdkDir + "/jni/include")}".toString())
+        cppFlags.add("-frtti")
+        cppFlags.add("-fexceptions")
+        ldLibs.addAll(["log", "opencv_java3"])
+        stl    = "gnustl_static"
+    }
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles.add(file('proguard-rules.txt'))
+        }
+    }
+    android.productFlavors {
+      /*  // for detailed abiFilter descriptions, refer to "Supported ABIs" @
+        // https://developer.android.com/ndk/guides/abis.html#sa
+        create("arm7") {
+            ndk.abiFilters.add("armeabi-v7a")
+        }*/
+        create("arm") {
+            ndk.abiFilters.add("armeabi")
+            ndk.ldFlags.add("-L${file('src/main/jniLibs/armeabi')}".toString())
+        }
+        create("arm7") {
+            ndk.abiFilters.add("armeabi-v7a")
+            ndk.ldFlags.add("-L${file('src/main/jniLibs/armeabi-v7a')}".toString())
+        }
+        create("arm8") {
+            ndk.abiFilters.add("arm64-v8a")
+            ndk.ldFlags.add("-L${file('src/main/jniLibs/arm64-v8a')}".toString())
+        }
+    }
+}
+
+dependencies {
+    compile project(":openCVLibrary310")
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.jakewharton.timber:timber:3.1.0'
+
+    // ReactiveX
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.5.1@aar'
+
+    compile group: 'org.boofcv', name: 'android', version: '0.19'
+}

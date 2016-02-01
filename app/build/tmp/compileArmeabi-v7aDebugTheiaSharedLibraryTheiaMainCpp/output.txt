@@ -1,0 +1,4 @@
+See file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabi-v7aDebugTheiaSharedLibraryTheiaMainCpp/output.txt for all output for compileArmeabi-v7aDebugTheiaSharedLibraryTheiaMainCpp.
+compiling filter.cpp successful.
+
+Finished compileArmeabi-v7aDebugTheiaSharedLibraryTheiaMainCpp, see full log file:///C:/Users/prefa/Desktop/HelloJNI/app/build/tmp/compileArmeabi-v7aDebugTheiaSharedLibraryTheiaMainCpp/output.txt.
