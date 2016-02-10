@@ -114,6 +114,7 @@ public class Util {
         subtract(image, storedImages[poolIndex]);
     }
 
+    private static int BELT_SIZE = 16;
     private static int maximumPixelCountThreshold = 128000;
     private static byte constant0xFF = (byte) 0xFF;
     private static float[][] LOWPASS_KERNEL = new float[][]{
@@ -122,7 +123,7 @@ public class Util {
             {1 / 9, 1 / 9, 1 / 9}
     };
 
-    public static void detectionPainter(int threshold, GrayImage current, GrayImage background, Bitmap output, byte[] storage) {
+    public static void detectionPainter(int threshold, GrayImage current, GrayImage background, Bitmap output, byte[] storage, byte[] heightCollapseMap, boolean[] beltMap) {
         int i, h, w, m, n;
         float sum;
         byte val;
@@ -165,6 +166,30 @@ public class Util {
                 storage[bitmapIndex++] = constant0xFF;
 
             }
+        }
+
+        // Loop through each belt chunk
+        int a = current.width / BELT_SIZE;
+        int chunkBrightness;
+        int chunkCollector = 0;
+        for (int chunk = 0; chunk < BELT_SIZE; chunk++) {
+            chunkBrightness = 0;
+
+            // Loop through the width of the belt chunk
+            for (w = (chunk * a); w < (chunk * a) + a; w++) {
+                chunkCollector = 0;
+
+                // Collapse the height of this chunk into one value.
+                for (h = 0; h < current.height; h++) {
+                    i = (h * current.width) + w;
+                    if ((current.data[i] & 0xFF) == 0xFF) {
+                        chunkCollector++;
+                    }
+                }
+            }
+
+            beltMap[chunk] = chunkCollector > 80;
+            //Timber.d("CHUNK %d == %d", chunk, chunkBrightness);
         }
 
         output.copyPixelsFromBuffer(ByteBuffer.wrap(storage));

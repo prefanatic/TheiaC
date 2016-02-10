@@ -71,7 +71,7 @@ Java_com_example_theia_MainActivity_detectionFilter(JNIEnv *env, jobject instanc
         }
     }
 
-    // Collapse our 2D image into 1D for the belt.
+    /*// Collapse our 2D image into 1D for the belt.
     int collapsed = 0;
     for (w = 0; w < (w_ / BELT_SPLIT); w++) {
         for (h = 0; h < h_; h++) {
@@ -79,7 +79,7 @@ Java_com_example_theia_MainActivity_detectionFilter(JNIEnv *env, jobject instanc
         }
 
         
-    }
+    }*/
 
     (*env)->ReleaseByteArrayElements(env, current_, current, 0);
     (*env)->ReleaseByteArrayElements(env, background_, background, 0);

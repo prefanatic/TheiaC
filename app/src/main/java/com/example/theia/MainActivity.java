@@ -19,8 +19,10 @@ import android.Manifest;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -86,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
     private int frameCount = 0;
     private boolean resetBackground = false;
     private ByteBuffer buffer = ByteBuffer.allocateDirect(0);
+    private boolean[] beltMap = new boolean[16];
+    private byte[] heightCollapseMap;
+
+    private Paint beltDisabled = new Paint();
+    private Paint beltEnabled = new Paint();
 
     private ImageReader.OnImageAvailableListener mImageReady = new ImageReader.OnImageAvailableListener() {
         @Override
@@ -103,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
             if (background.data == null || resetBackground) {
                 Util.imageToGrayImage(image, background);
                 image.close();
+
+                beltEnabled.setColor(Color.GRAY);
+                beltDisabled.setColor(Color.TRANSPARENT);
+
+                heightCollapseMap = new byte[background.width * background.height];
                 resetBackground = false;
                 return;
             }
@@ -119,12 +131,19 @@ public class MainActivity extends AppCompatActivity {
             //Util.gaussianBlur(latestImage);
             //Util.convertToBitmap(latestImage, processedImage, storage);
             //Util.lowPass(latestImage);
-            //Util.detectionPainter(50, latestImage, background, processedImage, storage);
-            detectionFilter(latestImage.width, latestImage.height, latestImage.data, background.data, storage);
-            processedImage.copyPixelsFromBuffer(ByteBuffer.wrap(storage));
+            Util.detectionPainter(50, latestImage, background, processedImage, storage, heightCollapseMap, beltMap);
+
+            // C++ Type
+            //detectionFilter(latestImage.width, latestImage.height, latestImage.data, background.data, storage);
+            //processedImage.copyPixelsFromBuffer(ByteBuffer.wrap(storage));
 
             Canvas canvas = mTextureView.lockCanvas();
             canvas.drawBitmap(processedImage, 0, 0, null);
+
+            int canvasChunk = canvas.getWidth() / beltMap.length;
+            for (int i = 0; i < beltMap.length; i++) {
+                canvas.drawRect(i * canvasChunk, 10, (i * canvasChunk) + canvasChunk, 50, beltMap[i] ? beltEnabled : beltDisabled);
+            }
 
             mTextureView.unlockCanvasAndPost(canvas);
         }
@@ -182,8 +201,6 @@ public class MainActivity extends AppCompatActivity {
                 resetBackground = true;
             }
         });
-
-
     }
 
     private void createPreviewSession() {
@@ -290,8 +307,12 @@ public class MainActivity extends AppCompatActivity {
                             Arrays.asList(mSizeArray), new AreaComparator()
                     );
 
+                    for (Size size : mSizeArray) {
+                        Timber.d("Size is %d x %d.", size.getWidth(), size.getHeight());
+                    }
+
                     mPreviewSize = Util.chooseOptimalSize(map.getOutputSizes(SurfaceTexture.class), mSurfaceWidth, mSurfaceHeight, largest);
-                    mPreviewSize = new Size(640, 480);
+                    mPreviewSize = new Size(320, 240);
 
                     Timber.d("Largest is %d x %d.", largest.getWidth(), largest.getHeight());
                     Timber.d("Choosing %d x %d as preview.", mPreviewSize.getWidth(), mPreviewSize.getHeight());
