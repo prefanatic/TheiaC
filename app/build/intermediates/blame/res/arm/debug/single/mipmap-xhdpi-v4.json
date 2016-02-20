@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\prefa\\Desktop\\HelloJNI\\app\\build\\intermediates\\res\\merged\\arm\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\prefa\\Desktop\\HelloJNI\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Cody Goldberg\\StudioProjects\\HelloJNI\\app\\build\\intermediates\\res\\merged\\arm\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Cody Goldberg\\StudioProjects\\HelloJNI\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]

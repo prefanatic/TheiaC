@@ -116,6 +116,7 @@ public class Util {
 
     private static int BELT_SIZE = 16;
     private static int maximumPixelCountThreshold = 128000;
+    private static int chunkThreshold = 80;
     private static byte constant0xFF = (byte) 0xFF;
     private static float[][] LOWPASS_KERNEL = new float[][]{
             {1 / 9, 1 / 9, 1 / 9},
@@ -188,7 +189,7 @@ public class Util {
                 }
             }
 
-            beltMap[chunk] = chunkCollector > 80;
+            beltMap[chunk] = chunkCollector > chunkThreshold;
             //Timber.d("CHUNK %d == %d", chunk, chunkBrightness);
         }
 
